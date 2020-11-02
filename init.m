@@ -12,7 +12,7 @@ global M_inv H B D_aom D_av C_r J_inv N_inv K_m R_m_inv b m g r
 % T = [T_P;T_L];
 
 Um = [9;9];
-Umax = 10000; % duza wartosc bo brak nasycenia 
+Umax = 9; % duza wartosc bo brak nasycenia 
 %%%%%%%%%%%%%%%%%%%%%%%
 
 % % % dynamika PARAMETRY
@@ -93,6 +93,7 @@ omega_dc = [85;85];
 
 kp = (2*T*zeta_0*om_0-1)/K;
 ki = (T*om_0^2)/(K*kp);
+kc = 69; % dobrane nierownosc 3.39 a ki = 67.7730
 Tf = 1/ki;
 
 
