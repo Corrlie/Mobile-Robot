@@ -87,17 +87,23 @@ C_r = 0.0005; % 5*10^-4 [-]
 
 K = 9.4; % (rad/s)/V
 T = 0.094; %s
+fp = 18;
+Tp = 1/fp;
 zeta_0 = 1;
-om_0 = 130;
-omega_dc = [85;85];
+% om_0 = 2*pi/(zeta_0*Tp);
+om_0 = 114;
+omega_dc = [80;80];
 
 kp = (2*T*zeta_0*om_0-1)/K;
 ki = (T*om_0^2)/(K*kp);
-kc = 69; % dobrane nierownosc 3.39 a ki = 67.7730
+% kc = 69; % dobrane nierownosc 3.39 a ki = 67.7730
+% kc = 2*ki;
+kc = ki + 50;
+% kc = 0;
 Tf = 1/ki;
 
 
 % uruchoimenie symulacji
-sim('robotMobilny.mdl', [0 10]);
+% sim('robotMobilny.mdl', [0 10]);
 
-show_CartPlot; % automatyczne uruchomienie m pliku show_CartPole
+% show_CartPlot; % automatyczne uruchomienie m pliku show_CartPole

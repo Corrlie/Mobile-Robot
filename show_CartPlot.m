@@ -1,6 +1,6 @@
 x0_odczyt = q_odczyt.signals.values(:,2);
 len = length(x0_odczyt);
-bounds = [-1 5 -1 1]; % granice osi wykresow
+bounds = [-1 30 -1 1]; % granice osi wykresow
 for i = 1:len
     teta0 = q_odczyt.signals.values(i,1);
     x0 = q_odczyt.signals.values(i,2);
