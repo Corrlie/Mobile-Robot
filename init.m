@@ -85,13 +85,14 @@ C_r = 0.0005; % 5*10^-4 [-]
 
 %%%%%%% regulatory
 
-K = 9.4; % (rad/s)/V
-T = 0.094; %s
+K = 9.39; % (rad/s)/V
+T = 0.095; %s
 fp = 18;
-Tp = 1/fp;
+Tp = 1/fp; % czas ustalania
 zeta_0 = 1;
 % om_0 = 2*pi/(zeta_0*Tp);
-om_0 = 114;
+% om_0 = 114;
+om_0 = 126; %takie jak prow
 omega_dc = [80;80];
 
 kp = (2*T*zeta_0*om_0-1)/K;
@@ -102,6 +103,10 @@ kc = ki + 50;
 % kc = 0;
 Tf = 1/ki;
 
+
+%%%%%%%%%%%%%%% skalowanie predkosci
+
+om_k_max = 10;
 
 % uruchoimenie symulacji
 % sim('robotMobilny.mdl', [0 10]);

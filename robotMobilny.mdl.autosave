@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.63"
+    ComputedModelVersion    "1.62"
     NumModelReferences	    0
     NumTestPointedSignals   0
     NumProvidedFunctions    0
@@ -73,8 +73,8 @@ Model {
 	  ViewObjType		  "SimulinkTopLevel"
 	  LoadSaveID		  "0"
 	  Extents		  [1882.0, 872.0]
-	  ZoomFactor		  [0.8]
-	  Offset		  [-1974.456187177487, -379.70514171941579]
+	  ZoomFactor		  [1.0]
+	  Offset		  [-1892.6176191022259, -256.34228569432878]
 	}
 	Object {
 	  $ObjectID		  6
@@ -119,9 +119,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "hp"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Fri Nov 13 14:24:18 2020"
-  RTWModifiedTimeStamp	  527177488
-  ModelVersionFormat	  "1.%<AutoIncrement:63>"
+  LastModifiedDate	  "Fri Nov 13 13:58:40 2020"
+  RTWModifiedTimeStamp	  527177390
+  ModelVersionFormat	  "1.%<AutoIncrement:62>"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
   LibraryLinkDisplay	  "disabled"
@@ -1247,9 +1247,9 @@ Model {
     TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
     TiledPageScale	    1
     ShowPageBoundaries	    off
-    ZoomFactor		    "80"
+    ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "257"
+    SIDHighWatermark	    "255"
     Block {
       BlockType		      SubSystem
       Name		      "Bez skalowania prêdkoœci"
@@ -3452,7 +3452,7 @@ Model {
       Points		      [17, 0]
       Branch {
 	ZOrder			387
-	Points			[0, -28; 238, 0]
+	Points			[0, -67; 238, 0]
 	DstBlock		"Manual Switch1"
 	DstPort			1
       }
@@ -3477,18 +3477,6 @@ Model {
       Points		      [40, 0; 0, -25]
       DstBlock		      "Manual Switch2"
       DstPort		      2
-    }
-    Annotation {
-      SID		      "257"
-      Name		      "ze skal"
-      Position		      [-1313, 144, -1280, 158]
-      InternalMargins	      [0, 0, 0, 0]
-    }
-    Annotation {
-      SID		      "256"
-      Name		      "bez skal"
-      Position		      [-1348, 49, -1310, 63]
-      InternalMargins	      [0, 0, 0, 0]
     }
     Annotation {
       SID		      "254"
