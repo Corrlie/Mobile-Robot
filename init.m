@@ -111,4 +111,5 @@ om_k_max = 10;
 % uruchoimenie symulacji
 % sim('robotMobilny.mdl', [0 10]);
 
-% show_CartPlot; % automatyczne uruchomienie m pliku show_CartPole
+% show_CartPlotZ; % automatyczne uruchomienie m pliku show_CartPoleZ (kola
+% i punkt Z)
