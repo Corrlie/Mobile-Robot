@@ -47,6 +47,13 @@ switch option
         om_dy = 0.2;
         psi_dx = -pi/2;
         psi_dy = 0;
+        
+%         A_dx = 2;
+%         A_dy = 2;
+%         om_dx = 1;
+%         om_dy = 0.5;
+%         psi_dx = -pi/2;
+%         psi_dy = 0;
     otherwise
         A_dx = 0;
         A_dy = 0;

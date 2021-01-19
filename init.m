@@ -4,7 +4,7 @@ clc;
 clear all;
 close all;
 
-global M_inv H B D_aom D_av C_r J_inv N_inv K_m R_m_inv b m g r theta0 is_init_atan2c Lz flaga
+global M_inv H B D_aom D_av C_r J_inv N_inv K_m R_m_inv b m g r theta0 is_init_atan2c Lz
 %%%%%%%%%%%%%%%%%%%%%%%% GSR
 % 
 % T_P = 0.01;
@@ -13,7 +13,6 @@ global M_inv H B D_aom D_av C_r J_inv N_inv K_m R_m_inv b m g r theta0 is_init_a
 %%% trajektoria
 theta0 = 0;
 is_init_atan2c = 1;
-flaga =0;
 
 x0=0.5;
 y0=0.5;
@@ -21,13 +20,13 @@ y0=0.5;
 % x0=-1;
 % y0=-2;
 %%%% punkt
-point_x_d = 1;
-point_y_d = 1;
+point_x_d = -2;
+point_y_d = -1;
 point_d = [point_x_d;point_y_d];
 q0 = [theta0; x0; y0];
 
 %%%%%%%% punkt z
-% Lz = 1;
+Lz = 1;
 
 
 Um = [9;9];

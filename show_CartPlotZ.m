@@ -22,7 +22,7 @@ for i = 1:len
     teta_ref = q_ref_odczyt.signals.values(i,1);
     x_ref = q_ref_odczyt.signals.values(i,2);
     y_ref = q_ref_odczyt.signals.values(i,3);
-    plot(x0_ref_odczyt(1:i), y0_ref_odczyt(1:i), 'r');
+    plot(x0_ref_odczyt(1:i), y0_ref_odczyt(1:i), 'g--');
     %%% koniec ref
     
     axis(bounds);
@@ -34,7 +34,7 @@ end
 
 plot(q_odczyt.signals.values(:,2), q_odczyt.signals.values(:,3), 'k--'); % x, y tor przerywana
 hold on;
-plot(q_ref_odczyt.signals.values(:,2), q_ref_odczyt.signals.values(:,3), 'r');
+plot(q_ref_odczyt.signals.values(:,2), q_ref_odczyt.signals.values(:,3), 'g--');
 % plot(x0_ref_odczyt,y0_ref_odczyt, 'g'); % sciezka
 grid on;
 axis(bounds);
