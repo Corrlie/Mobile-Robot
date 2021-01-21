@@ -1,6 +1,8 @@
 function out = GSR_trajectory(in)
 % gsr - œledzenie trajektorii
 
+global dzeta
+
 % wejscia
 t = in(1); % parametr czas
 option = in(2); % wybrana opcja (jaka figura)
@@ -34,10 +36,10 @@ switch option
         psi_dx = 0;
         psi_dy = 0;       
     case 3
-        A_dx = 2;
-        A_dy = 1;
-        om_dx = 1;
-        om_dy = 1;
+        A_dx = 1;
+        A_dy = 0.5;
+        om_dx = 0.4;
+        om_dy = 0.4;
         psi_dx = 0;
         psi_dy = 0;
     case 4

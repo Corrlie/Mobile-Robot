@@ -1,4 +1,6 @@
 function out = GSR_path(in)
+
+global dzeta;
     theta = in(1);
     x = in(2);
     y = in(3);
@@ -39,12 +41,18 @@ switch option
 
         s = atan2(p2,p1);
 
+%         proba_s = atan2(p2,p1);
+%         s = Atan2c_fun(proba_s);
     
         x_d = A*cos((mi*s)/(abs(A*mi)));
         y_d = A*sin((mi*s)/(abs(A*mi)));
 
         dx_d = -sign(A*mi)*sin((mi*s)/(abs(A*mi)));
         dy_d = sign(A*mi)*cos((mi*s)/(abs(A*mi)));
+        
+%         dx_d = -sgn_fun(A*mi)*sin((mi*s)/(abs(A*mi)));
+%         dy_d = sgn_fun(A*mi)*cos((mi*s)/(abs(A*mi)));
+%         
         
         ddx_d = -(1/A)*cos((mi*s)/(abs(A*mi)));
         ddy_d = -(1/A)*sin((mi*s)/(abs(A*mi)));  
@@ -53,9 +61,14 @@ theta_atan2 = atan2(dzeta*dy_d, dzeta*dx_d);
 theta_d = Atan2c_fun(theta_atan2);
 
 v_d = dzeta*sqrt(dx_d^2+dy_d^2);
+% v_d = sqrt(dx_d^2+dy_d^2);
 
 om_d = (ddy_d*dx_d-dy_d*ddx_d)/(dx_d^2+dy_d^2);
+% om_d = sign(A*mi)/A;
 
-out = [theta_d; x_d; y_d; dx_d; dy_d; ddx_d; ddy_d; om_d; v_d];
+kappa_d = om_d * dzeta;
+% kappa_d = 1/A;
+
+out = [theta_d; x_d; y_d; dx_d; dy_d; ddx_d; ddy_d; om_d; v_d; kappa_d];
 
 end
