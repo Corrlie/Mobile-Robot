@@ -56,8 +56,12 @@ Lg2V = (k2*e_p(2)+k1*(e_p(1)+h)*dhde_p2)*cos(e_p(1))+(k3*e_p(3)+k1*(e_p(1)+h)*dh
 u1 = -Lg1V-dhdt; % 5.20
 u2 = -Lg2V;
 
-u = [u1;u2];
+%u = [u1;u2];
 
-out = u;
+e_p_theta = e_p(1);
+e_p_x = e_p(2);
+e_p_y = e_p(3);
+
+out = [u1; u2; e_p_theta; e_p_x; e_p_y; h];
 
 end

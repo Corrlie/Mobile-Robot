@@ -24,6 +24,12 @@ sigma = dzeta;
 
 Kp = 1;
 Ka = 2*Kp;
+% --- inne dobory nastaw
+
+% Kp = 2;
+% Ka = 2*Kp;
+
+% --- koniec innych doborow nastaw
 
 e_x = x_d-x;
 e_y = y_d-y;
@@ -67,7 +73,7 @@ h_theta = Ka*e_a+ dtheta_a;
 u1 = h_theta;
 
 
-out = [u1; u2];
+out = [u1; u2; e_a];
 
 
 

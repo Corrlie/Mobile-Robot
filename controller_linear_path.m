@@ -23,8 +23,8 @@ q_el = [x;y]; % (1.9)
 q_del = [x_d;y_d]; % (1.9)
 
 e_l_help = q_el - q_del; % (1.9)
-e_l = sign(e_l_help'*j_S)*norm(e_l_help);
-% e_l = sgn_fun(e_l_help'*j_S)*norm(e_l_help);
+% e_l = sign(e_l_help'*j_S)*norm(e_l_help);
+e_l = sgn_fun(e_l_help'*j_S)*norm(e_l_help);
 
 e_theta = theta-theta_d; % (1.14)
 

@@ -3,6 +3,12 @@ function out = controller_VFO_point(in)
 
 Kp = 1;
 Ka = 2*Kp;
+% --- inne dobory nastaw
+
+% eta = 0.9;
+% --- koniec innych doborow nastaw
+
+
 delta = 0.001;
 
 theta_d = in(1);
@@ -58,6 +64,6 @@ h_theta = Ka*e_a+ dtheta_a;
 u1 = h_theta; %6.15
 
 
-out = [u1; u2];
+out = [u1; u2; e_a];
 
 end

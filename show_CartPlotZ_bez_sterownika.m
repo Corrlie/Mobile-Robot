@@ -8,8 +8,7 @@ y0_ref_odczyt = q_ref_odczyt.signals.values(:,3);
 teta0_ref_odczyt = q_ref_odczyt.signals.values(:,1);
 
 len = length(x0_odczyt);
-bounds = [-2 2 -2 2]; % granice osi wykresow
-% bounds = [-2 8 -2 8]; % granice osi wykresow % linia prosta
+%bounds = [-3 3 -3 3]; % granice osi wykresow
 for i = 1:len
     teta0 = q_odczyt.signals.values(i,1);
     x0 = q_odczyt.signals.values(i,2);
@@ -31,7 +30,7 @@ for i = 1:len
     plot(x0_ref_odczyt(1:i), y0_ref_odczyt(1:i), 'g');
     %%% koniec ref
     
-    axis(bounds);
+   % axis(bounds);
     grid on; 
     
     hold off;
@@ -45,9 +44,7 @@ plot(q_ref_odczyt.signals.values(:,2), q_ref_odczyt.signals.values(:,3), 'g');
 % plot(pkt_Z_x_odczyt, pkt_Z_y_odczyt, 'r:');
 % plot(x0_ref_odczyt,y0_ref_odczyt, 'g'); % sciezka
 grid on;
-axis(bounds);
-xlabel('x^G [m]');
-ylabel('y^G [m]');
+%axis(bounds);
 CartPlotZ([q_odczyt.signals.values(1,2);q_odczyt.signals.values(1,3); q_odczyt.signals.values(1,1)]); % poz pocz, funkcja -  wczyt x, y theta
 half = round(len/2); % round zeby byla liczba calk
 CartPlotZ([q_odczyt.signals.values(half,2);q_odczyt.signals.values(half,3); q_odczyt.signals.values(half,1)]); % poz srod x,y,theta

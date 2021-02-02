@@ -5,27 +5,44 @@ clear all;
 close all;
 
 global M_inv H B D_aom D_av C_r J_inv N_inv K_m R_m_inv b m g r theta0 is_init_atan2c Lz
+
+% Lz = 0.5;
+
 %%%%%%%%%%%%%%%%%%%%%%%% GSR
 % 
 % T_P = 0.01;
 % T_L = 0.0099;
 % T = [T_P;T_L];
-%%% trajektoria
+
 theta0 = 0;
 is_init_atan2c = 1;
-% 
+% %%% trajektoria
 % x0=0.5;
 % y0=0.5;
+x0 = 0;
+y0 = 0;
+
 
 %%%%%% ster vfo traj
-% % x0 = 0;
-% % y0 = 0;
+% x0 = 0;
+% y0 = 0;
 
 %%%%% vfo punkt
-point_x_d = 0;
-point_y_d = -1;
-x0 = 0;
-y0 = 1;
+% point_x_d = 0;
+% point_y_d = -1;
+% x0 = 0;
+% y0 = 1;
+
+% point_x_d = 1;
+% point_y_d = -1;
+% x0 = -1;
+% y0 = 1;
+
+
+
+%%%%% vfo sciezka
+% x0 = 0.1;
+% y0 = 0.1;
 
 % sterownik pometa
 % x0 = 0;
@@ -33,13 +50,14 @@ y0 = 1;
 % point_x_d = 0;
 % point_y_d = -1;
 
-% sciezka kolowa?
+% sciezka prost i kolowa
 % x0=0.5;
 % y0=0;
+
 %%%% punkt
 % point_x_d = -2;
 % point_y_d = -1;
-point_d = [point_x_d;point_y_d];
+% point_d = [point_x_d;point_y_d];
 q0 = [theta0; x0; y0];
 
 %%%%%%%% punkt z
@@ -146,5 +164,9 @@ om_k_max = 161.5;
 % uruchoimenie symulacji
 % sim('robotMobilny.mdl', [0 10]);
 
-% show_CartPlotZ; % automatyczne uruchomienie m pliku show_CartPoleZ (kola
+%show_CartPlotZ; % automatyczne uruchomienie m pliku show_CartPoleZ (kola
 % i punkt Z)
+%show_CartPlotZ_bez_sterownika
+%show_CartPlotZ_sterLinPoz_doPktu
+% show_CartPlotZ_sciezka_nieparam
+

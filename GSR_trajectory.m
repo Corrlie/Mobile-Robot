@@ -56,6 +56,16 @@ switch option
 %         om_dy = 0.5;
 %         psi_dx = -pi/2;
 %         psi_dy = 0;
+
+    case 5
+        n=3;
+        A=1;
+        B=1;
+
+        if t==0
+           t=0.001;
+        end
+        
     otherwise
         A_dx = 0;
         A_dy = 0;
@@ -99,6 +109,22 @@ elseif option == 1
     v_d = dzeta*sqrt(dx_d^2+dy_d^2);
 
     om_d = (ddy_d*dx_d-dy_d*ddx_d)/(dx_d^2+dy_d^2);
+    
+elseif option == 5 
+    x_d=abs(cos(t))^(2/n)*A*sign(cos(t));
+    y_d=abs(sin(t))^(2/n)*B*sign(sin(t));
+    dx_d=-2*A*abs(cos(t))^(2/n)*dirac(cos(t))*sin(t) - (2*A*abs(cos(t))^(2/n - 1)*sign(cos(t))^2*sin(t))/n;
+    dy_d=2*B*abs(sin(t))^(2/n)*dirac(sin(t))*cos(t) + (2*B*abs(sin(t))^(2/n - 1)*sign(sin(t))^2*cos(t))/n;
+    ddx_d=2*A*abs(cos(t))^(2/n)*sin(t)^2*dirac(1, cos(t)) - 2*A*abs(cos(t))^(2/n)*dirac(cos(t))*cos(t) - (2*A*abs(cos(t))^(2/n - 1)*sign(cos(t))^2*cos(t))/n + (2*A*abs(cos(t))^(2/n - 2)*sign(cos(t))^3*sin(t)^2*(2/n - 1))/n + (12*A*abs(cos(t))^(2/n - 1)*dirac(cos(t))*sign(cos(t))*sin(t)^2)/n;
+    ddy_d=2*B*abs(sin(t))^(2/n)*cos(t)^2*dirac(1, sin(t)) - 2*B*abs(sin(t))^(2/n)*dirac(sin(t))*sin(t) - (2*B*abs(sin(t))^(2/n - 1)*sign(sin(t))^2*sin(t))/n + (2*B*abs(sin(t))^(2/n - 2)*sign(sin(t))^3*cos(t)^2*(2/n - 1))/n + (12*B*abs(sin(t))^(2/n - 1)*dirac(sin(t))*sign(sin(t))*cos(t)^2)/n;   
+
+    theta_atan2 = atan2(dzeta*dy_d, dzeta*dx_d);
+    theta_d = Atan2c_fun(theta_atan2);
+
+    v_d = dzeta*sqrt(dx_d^2+dy_d^2);
+
+    om_d = (ddy_d*dx_d-dy_d*ddx_d)/(dx_d^2+dy_d^2);
+    
 else 
     disp('Nieprawidlowa wartosc gsr trajektoria');
 end
